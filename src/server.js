@@ -1,22 +1,26 @@
 'use strict'
-const port = 8080;
-const express = require('express');
-const server = express();
 
-exports.start = (port) => {
-    server.get('/books', (req, res) => {
-        console.log(`the request is from ${req.url}`);
-        const books = [
-            { id: 1, name: 'Code Complete' },
-            { id: 2, name: 'Clean Code' }
-        ];
+class Server{
+    constructor(serverInstance, port){
+        this.instance = serverInstance;
+        this.port = port;
+    };
 
-        res.send(books);
-    });
+    start = () => {
+        this.instance.get('/books', (req, res) => {
+            console.log(`the request is from ${req.url}`);
+            const books = [
+                { id: 1, name: 'Code Complete' },
+                { id: 2, name: 'Clean Code' }
+            ];
+    
+            res.send(books);
+        });
+    
+        this.instance.listen(this.port, () => {
+            console.log(`server at port ${this.port} is running...`);
+        });
+    };
+}
 
-    server.listen(port, () => {
-        console.log(`server at port ${port} is running...`);
-    });
-};
-
-this.start(port);
+module.exports = Server;
