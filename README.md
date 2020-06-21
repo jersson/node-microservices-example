@@ -1,4 +1,6 @@
 # node-microservices-example
+![Node.js CI](https://github.com/jersson/node-microservices-example/workflows/Node.js%20CI/badge.svg) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jersson_github-node-microservices-example&metric=alert_status)](https://sonarcloud.io/dashboard?id=jersson_github-node-microservices-example)
+
 cool and easy to extend microservices example using node
 
 ## what's the project structure?
